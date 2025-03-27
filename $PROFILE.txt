@@ -1,0 +1,1 @@
+oh-my-posh init pwsh --config "C:\Users\Mohaned-DZ\Documents\WindowsPowerShell\powerlevel10k_rainbow.omp.json" | Invoke-Expression

@@ -7,7 +7,7 @@
 
 # ### Importing the libraries
 
-# In[1]:
+# In[ ]:
 
 
 import numpy as np
@@ -23,7 +23,7 @@ tf.__version__
 
 # ### Importing the dataset
 
-# In[3]:
+# In[ ]:
 
 
 dataset = pd.read_csv('Churn_Modelling.csv')
@@ -44,7 +44,7 @@ print(y)
 
 # Label Encoding the "Gender" column
 
-# In[6]:
+# In[ ]:
 
 
 from sklearn.preprocessing import LabelEncoder
@@ -58,7 +58,7 @@ print(X)
 
 # One Hot Encoding the "Geography" column
 
-# In[8]:
+# In[ ]:
 
 
 from sklearn.compose import ColumnTransformer
@@ -73,7 +73,7 @@ print(X)
 
 # ### Splitting the dataset into the Training set and Test set
 
-# In[10]:
+# In[ ]:
 
 
 from sklearn.model_selection import train_test_split
@@ -81,7 +81,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 # ### Feature Scaling
 
-# In[11]:
+# In[ ]:
 
 
 from sklearn.preprocessing import StandardScaler
@@ -93,28 +93,28 @@ X_test = sc.transform(X_test)
 
 # ### Initializing the ANN
 
-# In[12]:
+# In[ ]:
 
 
 ann = tf.keras.models.Sequential()
 
 # ### Adding the input layer and the first hidden layer
 
-# In[13]:
+# In[ ]:
 
 
 ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
 
 # ### Adding the second hidden layer
 
-# In[14]:
+# In[ ]:
 
 
 ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
 
 # ### Adding the output layer
 
-# In[15]:
+# In[ ]:
 
 
 ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
@@ -123,7 +123,7 @@ ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
 
 # ### Compiling the ANN
 
-# In[16]:
+# In[ ]:
 
 
 ann.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
@@ -189,7 +189,7 @@ print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),
 
 # ### Making the Confusion Matrix
 
-# In[21]:
+# In[20]:
 
 
 from sklearn.metrics import confusion_matrix, accuracy_score
